@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :microposts
+  root 'state_pages#home'
+  
+
+  match '/help', to:  'state_pages#help', via: :get
+  match '/about', to:  'state_pages#about', via: :get
+
+    resources :microposts
 
   resources :users
 
