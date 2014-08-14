@@ -1,4 +1,11 @@
 @import "bootstrap";
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /* universal */
 
 html {
@@ -97,4 +104,11 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 10px;
+}
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
