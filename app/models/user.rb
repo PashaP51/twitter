@@ -11,9 +11,6 @@ class User < ActiveRecord::Base
   
   
   before_create :create_remember_token
-<<<<<<< HEAD
-  before_save {self.email = email.downcase}
-=======
   before_save { self.email = email.downcase }
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -38,22 +35,14 @@ class User < ActiveRecord::Base
     end
   
   validates :name, presence: true
->>>>>>> updating-users
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
-<<<<<<< HEAD
-  validates :password, length: {minimum: 6}
-  validates :name, presence: true, length: {maximum: 50}
-  
-  
-  def User.new_remember_token
-=======
+
   validates :password, length: { minimum: 6 }
   
 
 def User.new_remember_token
->>>>>>> updating-users
     SecureRandom.urlsafe_base64
   end
 

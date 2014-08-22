@@ -1,11 +1,5 @@
 class Micropost < ActiveRecord::Base
-<<<<<<< HEAD
-  validates :content, length: { maximum: 140, minimum: 1 }
-  belongs_to :user
-  default_scope -> { order('created_at DESC') }
-  validates :user_id, presence: true
-end
-=======
+
   belongs_to :user
   default_scope -> { order('created_at DESC') }
   validates :content, presence: true, length: { maximum: 140 }
@@ -19,4 +13,3 @@ end
           user_id: user.id)
   end
 end
->>>>>>> updating-users
