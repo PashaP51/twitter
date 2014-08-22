@@ -1,4 +1,14 @@
 module SessionsHelper
+<<<<<<< HEAD
+=======
+
+def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in." unless signed_in?
+      end
+    end
+>>>>>>> updating-users
     
   def sign_in(user)
     remember_token = User.new_remember_token
@@ -7,6 +17,7 @@ module SessionsHelper
     self.current_user = user
   end
   
+<<<<<<< HEAD
   
   def signed_in_user
     unless signed_in?
@@ -19,6 +30,12 @@ module SessionsHelper
     !current_user.nil?
   end
   
+=======
+  def signed_in?
+    !current_user.nil?
+  end
+
+>>>>>>> updating-users
   def current_user?(user)
     user == current_user
   end
@@ -27,7 +44,10 @@ module SessionsHelper
     @current_user = user
   end
 
+<<<<<<< HEAD
   
+=======
+>>>>>>> updating-users
   def current_user
     remember_token = User.encrypt(cookies[:remember_token])
     @current_user ||= User.find_by(remember_token: remember_token)
